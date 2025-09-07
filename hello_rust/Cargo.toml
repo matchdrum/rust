@@ -2,7 +2,7 @@
 name = "hello_rust"
 version = "0.1.0"
 edition = "2024"
-default-run = "main"
+default-run = "postfix"
 
 [dependencies]
 
@@ -14,4 +14,8 @@ path = "src/stack.rs"
 [[bin]]
 name = "stack"
 path = "src/stack.rs"
+
+[[bin]]
+name = "postfix"
+path = "src/postfix.rs"
 
