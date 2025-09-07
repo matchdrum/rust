@@ -13,20 +13,31 @@ fn push(stack: &mut Vec<char>, item: char, maxsize: usize) {
         println!("Max length already!");
     } else {
         stack.push(item);
-        println!("Stack {:?}", stack);
     }
 }
 
-fn size(stack: &mut Vec<char>, item: char, maxsize: usize) {
-    if (stack.len() == maxsize) {
-        println!("Max length already!");
-    } else {
-        stack.push(item);
-        println!("Stack {:?}", stack);
-    }
+fn size(stack: &Vec<char>) -> usize {
+    stack.len()
 }
 
 fn main() {
-    let stack = new_stack(5);
-    println!("Hello, stack2! {:?}", stack);
+    let input_string: String = String::from("I am going to reverse this string");
+    let stack_size: usize = input_string.len();
+    let mut stack: Vec<char> = new_stack(stack_size);
+    let mut reversed: String = String::new();
+   
+    println!("Hello, string! {:?}", input_string);
+
+    for i in input_string.chars() {
+        push(&mut stack, i, stack_size);
+    }
+
+     println!("Hello, stack2! {:?}", stack);
+
+    for i in 0..size(&stack) {
+        reversed.push(pop(&mut stack).unwrap());
+    }
+
+    println!("reversi {}", reversed);
+
 }

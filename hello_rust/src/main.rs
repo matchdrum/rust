@@ -3,19 +3,22 @@ fn new_stack(maxsize: usize) -> Vec<char> {
     vec
 }
 
-fn pop (stack: &mut Vec<char>) -> Option<char> {
- let popped: Option<char> = stack.pop();
- popped
+fn pop(stack: &mut Vec<char>) -> Option<char> {
+    let popped: Option<char> = stack.pop();
+    popped
 }
 
-fn push (stack: &mut Vec<char>, item: char, maxsize: usize) {
-if (stack.len() == maxsize ) {
-    println!("Max length already!");
-} else {
-    stack.push(item);
-     println!("Stack {:?}", stack);
+fn push(stack: &mut Vec<char>, item: char, maxsize: usize) {
+    if (stack.len() == maxsize) {
+        println!("Max length already!");
+    } else {
+        stack.push(item);
+        println!("Stack {:?}", stack);
+    }
 }
 
+fn size(stack: &mut Vec<char>) -> usize {
+    stack.len()
 }
 
 fn main() {
